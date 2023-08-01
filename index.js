@@ -1,5 +1,5 @@
 const numbers = [];
-let timer = "";
+let timers = "";
 const getRandomCoin = () => {
   const random = Math.floor(Math.random() * 100);
   if (random > 0 && !numbers.includes(random)) {
@@ -27,7 +27,7 @@ const startgame = () => {
   celement.innerHTML = num;
   numbers.push(num);
   createNumList(num);
-  timer = setTimeout(() => {
+  timers = setTimeout(() => {
     if (numbers.length <= 99) {
       startgame();
     }
@@ -35,5 +35,5 @@ const startgame = () => {
 };
 
 const stopGame = () => {
-  clearInterval(timer);
+  clearInterval(timers);
 };
